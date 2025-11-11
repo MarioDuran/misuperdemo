@@ -2,6 +2,7 @@ import {query} from '../db.js';
 
 export const createPost = async (req, res) => {
     const { content } = req.body;
+    console.log("Received content:", content);
     
     try {
         const insertPostQuery = `
