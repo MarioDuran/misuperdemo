@@ -9,12 +9,8 @@ const port = 3001;
 
 app.use(express.json());
 app.use(cors());
-app.use('/api/posts', postRoutes)
+app.use('/api/posts', postRoutes);
 
-app.listen(port);
+app.get('/', (req, res) => res.send('hola mundo'));
 
-app.get('/', (req, res) => {
-    res.send('hola mundo');
-});
-
-console.log('server on port', port);
+app.listen(port, () => console.log('server on port', port));
